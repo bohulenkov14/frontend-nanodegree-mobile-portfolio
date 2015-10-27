@@ -13,7 +13,8 @@ This project relies on Gulp, so, it maintains next folder structure:
     * Minimized and optimized version of project
   * Original files, and folders, containing them
 
-### Page is available on address <a href="http://http://bohulenkov14.github.io/frontend-nanodegree-mobile-portfolio/">http://bohulenkov14.github.io/frontend-nanodegree-mobile-portfolio/</a>
+### Page is available on address
+<a href="http://http://bohulenkov14.github.io/frontend-nanodegree-mobile-portfolio/">http://bohulenkov14.github.io/frontend-nanodegree-mobile-portfolio/</a>
 
 ### Instruction for running and testing site localy
 
