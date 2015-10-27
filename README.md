@@ -1,14 +1,19 @@
 ## Website Performance Optimization portfolio project
 
+### Udacity's project description
+
 Your challenge, if you wish to accept it (and we sure hope you will), is to optimize this online portfolio for speed! In particular, optimize the critical rendering path and make this page render as quickly as possible by applying the techniques you've picked up in the [Critical Rendering Path course](https://www.udacity.com/course/ud884).
 
-To get started, check out the repository, inspect the code,
+### Notes on directory structure
 
-### Getting started
+This project relies on Gulp, so, it maintains next folder structure:
 
-####Part 1: Optimize PageSpeed Insights score for index.html
+* Project root directory
+  * Build directory
+    * Minimized and optimized version of project
+  * Original files, and folders, containing them
 
-Some useful tips to help you get started:
+### Instruction for running and testing site localy
 
 1. Check out the repository
 1. To inspect the site on your phone, you can run a local server
@@ -28,13 +33,23 @@ Some useful tips to help you get started:
 
 1. Copy the public URL ngrok gives you and try running it through PageSpeed Insights! Optional: [More on integrating ngrok, Grunt and PageSpeed.](http://www.jamescryer.com/2014/06/12/grunt-pagespeed-and-ngrok-locally-testing/)
 
-Profile, optimize, measure... and then lather, rinse, and repeat. Good luck!
 
-####Part 2: Optimize Frames per Second in pizza.html
+#### Executed optimizations
 
-To optimize views/pizza.html, you will need to modify views/js/main.js until your frames per second rate is 60 fps or higher. You will find instructive comments in main.js. 
+* For index.html
+  * Added minification of css, js and html files with gulp
+  * Excluded media queries from css/style.css
+  * Added media attribute for link tag of css/print.css file
+  * Added async attribute for google analytics
+  * Added grunt task for images minification and resize
+* For views/pizza.html
+  * Simplified logic for slider, responsible for pizza image size calculation
+  * Added layouts for moving pizza on background to reduce painting on scroll
+  * Reduced number of moving objects in background to reduce painting on scroll
+  * Cached properties that trigger layout and used for background objets position calculation repeatedly
+  * Changed used css properties for background images from .left to .transform to save time on style change and layout
+  * Replaced all querySelector-like calls on getElementBy-like analogues
 
-You might find the FPS Counter/HUD Display useful in Chrome developer tools described here: [Chrome Dev Tools tips-and-tricks](https://developer.chrome.com/devtools/docs/tips-and-tricks).
 
 ### Optimization Tips and Tricks
 * [Optimizing Performance](https://developers.google.com/web/fundamentals/performance/ "web performance")

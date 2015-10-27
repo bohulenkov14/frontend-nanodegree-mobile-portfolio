@@ -406,13 +406,13 @@ var resizePizzas = function(size) {
   function changeSliderLabel(size) {
     switch(size) {
       case "1":
-        document.querySelector("#pizzaSize").innerHTML = "Small";
+        document.getElementById("pizzaSize").innerHTML = "Small";
         return;
       case "2":
-        document.querySelector("#pizzaSize").innerHTML = "Medium";
+        document.getElementById("pizzaSize").innerHTML = "Medium";
         return;
       case "3":
-        document.querySelector("#pizzaSize").innerHTML = "Large";
+        document.getElementById("pizzaSize").innerHTML = "Large";
         return;
       default:
         console.log("bug in changeSliderLabel");
@@ -451,7 +451,7 @@ var resizePizzas = function(size) {
   }
 
 
-  var randomPizzaContainers = document.querySelectorAll(".randomPizzaContainer");
+  var randomPizzaContainers = document.getElementsByClassName("randomPizzaContainer");
   var newWidthPercent = widthSwitcher(size) + '%';
   for (var i = 0; i < randomPizzaContainers.length; i++) {
     randomPizzaContainers[i].style.width = newWidthPercent;
@@ -501,7 +501,7 @@ function updatePositions() {
   window.performance.mark("mark_start_frame");
 
 
-  var items = document.querySelectorAll('.mover');
+  var items = document.getElementsByClassName('mover');
 
   //precalculated moving pizza phases
   var scrollTop = document.body.scrollTop;
@@ -546,7 +546,7 @@ document.addEventListener('DOMContentLoaded', function() {
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
     //creating additional layers for moving pizzas
     elem.style.willChange = 'transform';
-    document.querySelector("#movingPizzas1").appendChild(elem);
+    document.getElementById("movingPizzas1").appendChild(elem);
   }
   updatePositions();
 });
