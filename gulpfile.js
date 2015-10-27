@@ -6,6 +6,7 @@ var inlinesource = require('gulp-inline-source');
 var minifyHTML = require('gulp-minify-html');
 var minifyCss = require('gulp-minify-css');
 var uglify = require('gulp-uglify');
+var deploy = require('gulp-gh-pages');
 
 
 
@@ -105,3 +106,8 @@ gulp.task('pizza',
 
 
 gulp.task('default', ['resume', 'pizza']);
+
+gulp.task('deploy', function () {
+  return gulp.src("build/**/*")
+    .pipe(deploy())
+});
